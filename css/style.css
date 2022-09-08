@@ -9,7 +9,7 @@ body{
 nav{
     /* background: linear-gradient(to bottom,#9424F0 80%,#9c57d4); */
     background-color: #9424F0;
-    padding-left: 150px;
+    padding-left: 10%;
     padding-top: 50px;
     padding-bottom: 170px;
 }
@@ -22,6 +22,7 @@ nav{
     list-style-type: none;
     margin-left: 25%;
     display: flex;
+    flex-wrap: wrap;
     column-gap: 8%;
     align-items: center;
     color: #fff;
@@ -29,7 +30,7 @@ nav{
 .nav-li-active{
     color: #21b1ec;
     border-bottom: 2px solid #cb25d4;
-    font-weight: 600;
+    font-weight: 800;
 }
 .nav-top button{
     height: 40px;
@@ -47,6 +48,9 @@ nav{
 .nav-content{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-right: 40px;
     position: relative;
 }
@@ -65,14 +69,13 @@ nav{
     inline-size: 400px;
 }
 .nav-content img{
-    position: absolute;
-    right: 0;
     height: 550px;
 }
 
 .saas-services{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 100px;
     margin-left: 7%;
     margin-right: 10%;
@@ -115,9 +118,10 @@ nav{
 .cards{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 50px;
     justify-content: center;
-    column-gap: 30px;
+    gap: 30px;
 }
 .card{
     width: 200px;
@@ -189,4 +193,65 @@ nav{
 }
 .card-support>img{
     filter: invert(28%) sepia(80%) saturate(1582%) hue-rotate(270deg) brightness(90%) contrast(79%);
+}
+
+@media screen and (max-width: 1190px) {
+    .nav-content{
+        justify-content: center;
+    }
+    .nav-content div h1{
+        overflow-wrap: normal;
+        inline-size: auto;
+    }
+    .nav-content div p{
+        overflow-wrap: normal;
+        inline-size: auto;
+    }
+    .saas-services{
+        justify-content: center;
+    }
+    .services-details>h4{
+        overflow-wrap: normal;
+        inline-size: auto;
+    }
+    .features{
+        margin: 5%;
+    }
+    .features>h3{
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav{
+        padding-bottom: 5%;
+    }
+    .nav-top{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav-lists{
+        width: 100%;
+        margin: 5%;
+        /*display: flex;
+        flex-wrap: wrap;
+        column-gap: 8%;
+        align-items: center;
+        color: #fff; */
+    }
+    .nav-top button{
+        margin-left: 35%;
+    }
+    .nav-content img{
+        height: 300px;
+    }
+    .nav-content div{
+        margin-top: 5%;
+    }
+    .saas-services>div:first-child img{
+        height: 350px;
+    }
 }
